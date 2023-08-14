@@ -1,0 +1,4 @@
+.github/CODEOWNERS
+*.ps1
+README.md
+Secrets-example.json

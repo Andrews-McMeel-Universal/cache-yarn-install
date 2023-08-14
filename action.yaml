@@ -1,0 +1,12 @@
+name: Default GitHub Action
+
+description: Default GitHub Action that outputs "Hello World"
+
+branding:
+  color: purple
+  icon: unlock
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Hello World" >> $GITHUB_OUTPUT
+      shell: bash
