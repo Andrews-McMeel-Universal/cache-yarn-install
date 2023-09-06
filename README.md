@@ -17,6 +17,7 @@ To make `cache-yarn-install` a part of your workflow, just add a step to one of 
 > Requirement: @setup/node should be run before
 
 Example:
+
 ```YAML
 - name: Cache Yarn Install
   uses: Andrews-McMeel-Universal/cache-yarn-install@v1
@@ -30,11 +31,11 @@ Example:
 
 ## Options
 
-| Variable | Description       | Required | `[Default]`     |
-| -------- | ----------------- | :------: | --------------- |
-| `cwd`  | Changes node's process.cwd() if the project is not located on the root. Default to process.cwd() |         | `.` |
-| `cache-prefix`  | Add a specific cache-prefix |         | `'default'` |
-| `cache-npm-cache`  | Cache npm global cache folder often used by node-gyp, prebuild binaries (invalidated on lock/os/node-version) |         | `'true'` |
-| `cache-node-modules`  | Cache node_modules, might speed up link step (invalidated lock/os/node-version/branch) |         | `'false'` |
-| `cache-install-state`  | Cache yarn install state, might speed up resolution step when node-modules cache is activated (invalidated lock/os/node-version/branch) |         | `'false'` |
-| `enable-corepack`  | Enable corepack |        | `'true'` |
+| Variable              | Description                                                                                                                             | Required | `[Default]` |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | :------: | ----------- |
+| `cwd`                 | Changes node's process.cwd() if the project is not located on the root. Default to process.cwd()                                        |          | `.`         |
+| `cache-prefix`        | Add a specific cache-prefix                                                                                                             |          | `'default'` |
+| `cache-npm-cache`     | Cache npm global cache folder often used by node-gyp, prebuild binaries (invalidated on lock/os/node-version)                           |          | `'true'`    |
+| `cache-node-modules`  | Cache node_modules, might speed up link step (invalidated lock/os/node-version/branch)                                                  |          | `'false'`   |
+| `cache-install-state` | Cache yarn install state, might speed up resolution step when node-modules cache is activated (invalidated lock/os/node-version/branch) |          | `'false'`   |
+| `enable-corepack`     | Enable corepack                                                                                                                         |          | `'true'`    |
