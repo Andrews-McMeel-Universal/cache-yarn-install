@@ -1,6 +1,6 @@
 # Action Template
 
-Yyarn Install composite action for yarn 3/4+ and "nodeLinker: node-modules"
+Yarn Install composite action for yarn 3/4+ and "nodeLinker: node-modules"
 
 Reference: https://gist.github.com/belgattitude/042f9caf10d029badbde6cf9d43e400a
 
