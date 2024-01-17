@@ -217,6 +217,9 @@ wp-content/shield/
 
 # Ignore compiled storybook directory
 /storybook-static
+.storybook/main.js
+.storybook/preview-body.html
+.storybook/preview.js
 
 # Ignore uploaded files in development
 /storage/*
@@ -234,6 +237,7 @@ wp-content/shield/
 next.config.original.js
 next.config.wizardcopy.js
 /build
+public/sitemap*.xml
 
 # Runtime data
 pids
@@ -722,10 +726,6 @@ FodyWeavers.xsd
 /.pnp
 .pnp.js
 
-# generated during build
-robots.txt
-sitemap*.xml
-
 # misc
 .DS_Store
 
@@ -766,3 +766,4 @@ terraform/.terraform/
 terraform/*.tfstate*
 terraform/*.tfplan
 terraform/variables.tf
+terraform/*.key
