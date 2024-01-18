@@ -77,7 +77,7 @@ runs:
       id: yarn-install-state-cache
       uses: actions/cache@v3
       with:
-        path: ${{ inputs.cwd }}/.yarn/ci-cache
+        path: ${{ inputs.cwd }}/.yarn/
         key: yarn-install-state-cache-${{ inputs.cache-prefix }}-${{ runner.os }}-${{ steps.yarn-config.outputs.CURRENT_NODE_VERSION }}-${{ steps.yarn-config.outputs.CURRENT_BRANCH }}-${{ hashFiles(format('{0}/yarn.lock', inputs.cwd), format('{0}/.yarnrc.yml', inputs.cwd)) }}
 
     - name: Install dependencies
