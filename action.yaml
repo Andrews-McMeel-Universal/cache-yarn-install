@@ -29,6 +29,13 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Install corepack
+      if: inputs.enable-corepack == 'true'
+      shell: bash
+      working-directory: ${{ inputs.cwd }}
+      run: |
+        npm install -g corepack
+
     - name: Enable Corepack
       if: inputs.enable-corepack == 'true'
       shell: bash
