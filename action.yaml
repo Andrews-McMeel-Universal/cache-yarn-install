@@ -25,21 +25,16 @@ inputs:
     description: "Enable corepack"
     required: false
     default: "true"
+  node-version:
+    description: "Node version to use, defaults to the one defined in the workflow"
+    required: false
+    default: "20.x"
 
 runs:
   using: "composite"
   steps:
-    - name: Install corepack
-      if: inputs.enable-corepack == 'true'
-      shell: bash
-      working-directory: ${{ inputs.cwd }}
-      run: |
-        if ! command -v corepack &> /dev/null; then
-          echo "Corepack is not installed, installing..."
-          curl -o- https://raw.githubusercontent.com/corepack/corepack/main/install.sh | bash
-        else
-          echo "Corepack is already installed."
-        fi
+    - name: Set up Node
+      uses: actions/setup-node@v4
 
     - name: Enable Corepack
       if: inputs.enable-corepack == 'true'
