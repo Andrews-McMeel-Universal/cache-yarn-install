@@ -39,7 +39,6 @@ runs:
     - name: Enable Corepack
       if: inputs.enable-corepack == 'true'
       shell: sh
-      working-directory: ${{ inputs.cwd }}
       run: |
         npm install -g corepack
         corepack enable
