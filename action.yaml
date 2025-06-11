@@ -25,16 +25,14 @@ inputs:
     description: "Enable corepack"
     required: false
     default: "true"
-  node-version:
-    description: "Node version to use, defaults to the one defined in the workflow"
-    required: false
-    default: "20.x"
 
 runs:
   using: "composite"
   steps:
     - name: Set up Node
       uses: actions/setup-node@v4
+      with:
+        node-version-file: .nvmrc
 
     - name: Enable Corepack
       if: inputs.enable-corepack == 'true'
