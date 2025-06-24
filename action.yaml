@@ -34,6 +34,10 @@ runs:
       with:
         node-version-file: .nvmrc
 
+    - name: Install Yarn
+      shell: sh
+      run: npm install -g yarn
+
     - name: Enable Corepack
       if: inputs.enable-corepack == 'true'
       shell: sh
