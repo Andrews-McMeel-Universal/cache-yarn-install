@@ -23,7 +23,17 @@ jobs:
   required-checks:
     name: Required Checks
     runs-on: ubuntu-latest
+    if: always()
     needs: [dependabot-automations]
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Failed Checks
+        if: needs.dependabot-automations.result == 'failure'
+        run: |
+          echo "One or more required checks failed"
+          echo "Please fix the issues before merging the pull request"
+          exit 1
+      - name: Successful Checks
+        if: needs.dependabot-automations.result == 'success'
+        run: |
+          echo "All required checks passed"
+          echo "You can merge the pull request"

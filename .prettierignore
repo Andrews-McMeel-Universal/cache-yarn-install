@@ -42,3 +42,4 @@ wp-content/
 **/*.cs
 /*.lutconfig
 /.editorconfig
+/packages
